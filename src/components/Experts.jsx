@@ -1,25 +1,21 @@
-import expr1 from "../assets/exprtsize1.mp4";
-import expr2 from "../assets/exprtsize2.mp4";
-import expr3 from "../assets/exprtsize3.mp4";
-
 const experts = [
   {
-    name: 'John Doe',
-    role: 'Strength & Conditioning Specialist',
-    img: 'https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?w=400&h=500&fit=crop&q=80',
-    video: expr1,
+    name: "John Doe",
+    role: "Strength & Conditioning Specialist",
+    img: "https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?w=400&h=500&fit=crop&q=80",
+    video: "/exprtsize1.mp4",
   },
   {
-    name: 'Jane Smith',
-    role: 'Yoga & Flexibility Expert',
-    img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop&q=80',
-    video: expr2,
+    name: "Jane Smith",
+    role: "Yoga & Flexibility Expert",
+    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop&q=80",
+    video: "/exprtsize2.mp4",
   },
   {
-    name: 'Mike Johnson',
-    role: 'CrossFit Coach',
-    img: 'https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&h=500&fit=crop&q=80',
-    video: expr3
+    name: "Mike Johnson",
+    role: "CrossFit Coach",
+    img: "https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&h=500&fit=crop&q=80",
+    video: "/exprtsize3.mp4",
   },
 ];
 
@@ -31,19 +27,27 @@ export default function Experts() {
           <p className="label">THE ELITE TEAM</p>
           <h2>Meet Our Experts</h2>
         </div>
+
         <div className="new-experts-grid">
           {experts.map(({ name, role, img, video }) => (
             <div className="premium-expert-card" key={name}>
               <div className="expert-media-wrapper">
                 {video ? (
-                  <video autoPlay loop muted playsInline preload="auto" className="expert-media">
-                    <source src={video} type="video/mp4" />
-                  </video>
+                  <video
+                    src={video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="expert-media"
+                  />
                 ) : (
                   <img src={img} alt={name} className="expert-media" />
                 )}
                 <div className="expert-gradient-overlay"></div>
               </div>
+
               <div className="premium-expert-info">
                 <h3>{name}</h3>
                 <p className="expert-role">{role}</p>

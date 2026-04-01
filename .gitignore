@@ -1,13 +1,14 @@
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
 
-# Videos & Large Assets
-*.mp4
-*.mov
-*.wmv
-*.avi
+# Build output
+dist/
+dist-ssr/
+
+# Environment files
+*.local
+.env
+.env.*
 
 # Logs
 logs
@@ -18,13 +19,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Editor directories and files
+# Editor / OS files
 .vscode/
 .idea/
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
