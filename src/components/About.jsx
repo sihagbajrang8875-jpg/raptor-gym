@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import aboutVid from "../assets/aboutvdo.mov";
+import aboutVid from "../assets/aboutsize.mp4"; // TODO: replace with your actual about video
 
 export default function About() {
   const [isMuted, setIsMuted] = useState(true);

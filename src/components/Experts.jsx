@@ -1,6 +1,6 @@
-import expr1 from "../assets/exprt1.mp4";
-import expr2 from "../assets/exprt2.mp4";
-import expr3 from "../assets/exprt3.mp4";
+import expr1 from "../assets/exprtsize1.mp4";
+import expr2 from "../assets/exprtsize2.mp4";
+import expr3 from "../assets/exprtsize3.mp4";
 
 const experts = [
   {
@@ -36,7 +36,9 @@ export default function Experts() {
             <div className="premium-expert-card" key={name}>
               <div className="expert-media-wrapper">
                 {video ? (
-                  <video src={video} autoPlay loop muted playsInline className="expert-media" />
+                  <video autoPlay loop muted playsInline preload="auto" className="expert-media">
+                    <source src={video} type="video/mp4" />
+                  </video>
                 ) : (
                   <img src={img} alt={name} className="expert-media" />
                 )}

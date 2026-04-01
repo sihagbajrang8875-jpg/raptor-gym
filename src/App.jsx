@@ -1,10 +1,10 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Experts from './components/Experts';
-import Contact from './components/Contact';
-import WhatsAppButton from './components/WhatsAppButton';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import About from './components/About.jsx';
+import Services from './components/Services.jsx';
+import Experts from './components/Experts.jsx';
+import Contact from './components/Contact.jsx';
+import WhatsAppButton from './components/WhatsAppButton.jsx';
 
 export default function App() {
   return (
