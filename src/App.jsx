@@ -4,6 +4,7 @@ import About from './components/About.jsx';
 import Services from './components/Services.jsx';
 import Experts from './components/Experts.jsx';
 import Contact from './components/Contact.jsx';
+import Footer from './components/Footer.jsx';
 import WhatsAppButton from './components/WhatsAppButton.jsx';
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
       <Services />
       <Experts />
       <Contact />
+      <Footer />
       <WhatsAppButton />
     </>
   );

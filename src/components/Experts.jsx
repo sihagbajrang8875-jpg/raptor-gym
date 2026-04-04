@@ -1,18 +1,19 @@
 const experts = [
   {
-    name: "John Doe",
+    // name: "vivek sharma",
     role: "Strength & Conditioning Specialist",
     img: "https://images.unsplash.com/photo-1534367507873-d2d7e24c797f?w=400&h=500&fit=crop&q=80",
+
     video: "/exprtsize1.mp4",
   },
   {
-    name: "Jane Smith",
+    // name: "poonam sood",
     role: "Yoga & Flexibility Expert",
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop&q=80",
     video: "/exprtsize2.mp4",
   },
   {
-    name: "Mike Johnson",
+    // name: "ramesh",
     role: "CrossFit Coach",
     img: "https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&h=500&fit=crop&q=80",
     video: "/exprtsize3.mp4",
@@ -51,10 +52,6 @@ export default function Experts() {
               <div className="premium-expert-info">
                 <h3>{name}</h3>
                 <p className="expert-role">{role}</p>
-                <div className="expert-socials">
-                  <i className="fab fa-instagram"></i>
-                  <i className="fab fa-twitter"></i>
-                </div>
               </div>
             </div>
           ))}

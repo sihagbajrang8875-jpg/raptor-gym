@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useState('light');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,10 +23,15 @@ export default function Navbar() {
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMenuOpen(false);
   };
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -38,7 +44,12 @@ export default function Navbar() {
           <img src="https://raptorfitness.in/static/media/logo.88153b6f978e5eb4503e.png" alt="Raptor Gym" className="logo-img" />
           RAPTOR GYM
         </div>
-        <ul className="nav-links">
+        <div className={`hamburger ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
           {[
             { label: 'Home', id: 'home' },
             { label: 'About', id: 'about' },
@@ -58,10 +69,10 @@ export default function Navbar() {
               </a>
             </li>
           ))}
-          <li className="theme-toggle" onClick={toggleTheme} style={{ 
-            cursor: 'pointer', 
-            display: 'flex', 
-            alignItems: 'center', 
+          <li className="theme-toggle" onClick={toggleTheme} style={{
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
             marginLeft: '20px',
             color: 'var(--text-primary)',
             transition: 'color var(--transition-smooth)'
