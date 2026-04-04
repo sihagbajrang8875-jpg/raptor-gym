@@ -1062,8 +1062,54 @@ p {
     font-size: 2.4rem;
   }
 
+  /* ── Navbar ── */
+  .nav-container {
+    height: 70px;
+    padding: 0 20px;
+    flex-wrap: nowrap;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
   .nav-links {
-    gap: 1.8rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    width: clamp(240px, 70vw, 320px);
+    height: 100vh;
+    background: var(--bg-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+    margin: 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links .theme-toggle {
+    margin-left: 0 !important;
+    margin-top: 1rem;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   .new-services-grid {
@@ -1084,55 +1130,6 @@ p {
 
 /* ─── ≤ 768px: Phones landscape / small tablets ─────────────────── */
 @media (max-width: 768px) {
-
-  /* ── Navbar ── */
-  .nav-container {
-    height: 70px;
-    padding: 0 20px;
-    flex-wrap: nowrap;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 65%;
-    height: 100vh;
-    background: var(--bg-color);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    transition: right 0.4s ease;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
-    margin: 0;
-    z-index: 1000;
-  }
-
-  .nav-links.active {
-    right: 0;
-  }
-
-  .nav-links .theme-toggle {
-    margin-left: 0 !important;
-    margin-top: 1rem;
-  }
-
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
 
   /* ── Hero ── */
   .hero-content {
@@ -1254,9 +1251,13 @@ p {
   }
 
   /* ── Navbar ── */
+  .hamburger .bar {
+    width: 22px;
+    height: 2.5px;
+  }
+
   .nav-links {
     gap: 1.5rem;
-    width: 75%;
   }
 
   /* ── Hero ── */
@@ -1347,10 +1348,6 @@ p {
 
   .logo-img {
     width: 38px;
-  }
-
-  .nav-links {
-    width: 85%;
   }
 
   /* ── Hero ── */
